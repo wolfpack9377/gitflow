@@ -125,6 +125,18 @@ The ``-d`` flag will accept all defaults.
   
   For hotfix branches, the `<base>` arg must be a commit on `master`.
 
+* To use the alternate hotfix workflow, use:
+
+  		git flow hotfix-cp
+  		git flow hotfix-cp start <release> <commit1> <commit2> ...
+  		git flow hotfix-cp finish <release>
+  
+The alternate hotfix workflow, assumes you've already committed your
+changes to develop. A hotfix branch is created, the specified commits
+are cherry-picked to the hotfix branch. You can review the hotfix branch
+at this point to validate the changes. Finishing the hotfix branch will
+work as normal except it skips the merge to develop.
+
 * To list/start support branches, use:
   
   		git flow support
